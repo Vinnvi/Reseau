@@ -13,10 +13,14 @@ public class SegmentRoute <S extends Semaphore,J extends Jonction> implements Ob
 	private J jonctionTrue;
 	private J jonctionFalse;
 	
-	public SegmentRoute(int longueur,String name){
+	public SegmentRoute(int longueur,J jonctionFalse,J jonctionTrue,String name){
 		this.name = name;
 		this.longueur = longueur;
 		capteurs = new ArrayList<>();
+		this.jonctionFalse = jonctionFalse;
+		this.jonctionTrue = jonctionTrue;
+		jonctionFalse.addSegment(this,false);
+		jonctionTrue.addSegment(this,true);
 	}
 	
 	public void addSemaphore(S semaphore,boolean sens){

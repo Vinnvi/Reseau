@@ -18,6 +18,6 @@ public abstract class Jonction {
 		this.id = id;
 	}
 	
-	
+	public abstract void addSegment(SegmentRoute s,boolean sens);
 	
 }

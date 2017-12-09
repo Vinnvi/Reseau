@@ -1,4 +1,8 @@
 
-public class PassagePieton {
+public class PassagePieton extends JonctionSimple{
+	
+	public PassagePieton(){
+		
+	}
 	
 }	
