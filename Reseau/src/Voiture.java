@@ -22,6 +22,7 @@ public class Voiture <S extends Semaphore>{
 			//Second case : car change segment
 			else {
 				int distanceRestante = etat.getSegment().getLongueur()-etat.getPositionSegement();
+				this.etat.setPositionSegement(this.etat.getSegment().getLongueur());
 				this.etat.getSegment().getJonctionTrue().avancer(this,distanceRestante);
 			}
 		}

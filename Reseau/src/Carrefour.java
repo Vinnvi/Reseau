@@ -30,5 +30,14 @@ public class Carrefour extends Jonction{
 				v.etat.getSegment().getJonctionTrue().avancer(v,distanceRestante);
 			}
 		}
+		else{//Si on arrive depuis la droite
+			if(v.etat.getSegment().getLongueur()+this.getLongueur()>distanceRestante) { //Si on reste bien sur le meme segment
+				v.etat.setPositionSegement(v.etat.getSegment().getLongueur()+this.getLongueur()-distanceRestante);				
+			}
+			else {
+				distanceRestante -= v.etat.getSegment().getLongueur()+this.getLongueur();
+				v.etat.getSegment().getJonctionFalse().avancer(v, distanceRestante);
+			}
+		}
 	}
 }
