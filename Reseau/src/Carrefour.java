@@ -40,4 +40,9 @@ public class Carrefour extends Jonction{
 			}
 		}
 	}
+
+	@Override
+	public void addSegment(SegmentRoute s, boolean sens) {
+		listeRoutes.add(s);
+	}
 }
