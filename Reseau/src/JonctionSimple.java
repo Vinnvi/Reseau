@@ -11,4 +11,22 @@ public abstract class JonctionSimple extends Jonction{
 			sTrue = s;
 		}
 	}
+
+	public SegmentRoute getsFalse() {
+		return sFalse;
+	}
+
+	public void setsFalse(SegmentRoute sFalse) {
+		this.sFalse = sFalse;
+	}
+
+	public SegmentRoute getsTrue() {
+		return sTrue;
+	}
+
+	public void setsTrue(SegmentRoute sTrue) {
+		this.sTrue = sTrue;
+	}
+	
+	
 }
