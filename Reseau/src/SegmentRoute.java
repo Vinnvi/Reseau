@@ -19,8 +19,8 @@ public class SegmentRoute <S extends Semaphore,J extends Jonction> implements Ob
 		capteurs = new ArrayList<>();
 		this.jonctionFalse = jonctionFalse;
 		this.jonctionTrue = jonctionTrue;
-		jonctionFalse.addSegment(this,false);
-		jonctionTrue.addSegment(this,true);
+		jonctionFalse.addSegment(this,true);
+		jonctionTrue.addSegment(this,false);
 	}
 	
 	public void addSemaphore(S semaphore,boolean sens){
