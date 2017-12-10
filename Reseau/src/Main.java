@@ -48,18 +48,18 @@ public class Main {
 	
 	
 	public static void main(String args[]) {
-		Barriere B1 = new Barriere();
-		Barriere B2 = new Barriere();
-		Barriere B3 = new Barriere();
+		Barriere B1 = new Barriere(1);
+		Barriere B2 = new Barriere(2);
+		Barriere B3 = new Barriere(3);
 		
-		Carrefour C1 = new Carrefour();
-		Carrefour C2 = new Carrefour();
-		PassagePieton P1 = new PassagePieton();
-		PassagePieton P2 = new PassagePieton();
+		Carrefour C1 = new Carrefour(1);
+		Carrefour C2 = new Carrefour(2);
+		PassagePieton P1 = new PassagePieton(1);
+		PassagePieton P2 = new PassagePieton(2);
 		
 		SegmentRoute R1 = new SegmentRoute(60,B1,C1,"R1");
 		SegmentRoute R2 = new SegmentRoute(100,C1,P1,"R2");
-		SegmentRoute R3 = new SegmentRoute(100,C2,P1,"R3");
+		SegmentRoute R3 = new SegmentRoute(100,P1,C2,"R3");
 		SegmentRoute R4 = new SegmentRoute(45,C2,B3,"R4");
 		SegmentRoute R5 = new SegmentRoute(60,C2,B2,"R5");
 		SegmentRoute R6 = new SegmentRoute(45,P2,C2,"R6");

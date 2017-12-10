@@ -5,8 +5,8 @@ public class Carrefour extends Jonction{
 	ArrayList <SegmentRoute> listeRoutes = new ArrayList<>();
 	
 	
-	public Carrefour(){
-		
+	public Carrefour(int id){
+		this.setId(id);
 	}
 	
 	public void addRoute(SegmentRoute s){
@@ -23,6 +23,7 @@ public class Carrefour extends Jonction{
 		System.out.println(nextStep);
 		v.etat.setSegment(listeRoutes.get(nextStep));
 		if(v.etat.getSegment().getJonctionFalse()==this){ // si on arrive depuis la gauche
+			v.etat.setSens(true);
 			if(v.etat.getSegment().getLongueur()+this.getLongueur()>distanceRestante) { //Si on reste bien sur le meme segment à la fin
 				v.etat.setPositionSegement(distanceRestante-this.getLongueur());
 			}
@@ -32,6 +33,7 @@ public class Carrefour extends Jonction{
 			}
 		}
 		else{//Si on arrive depuis la droite
+			v.etat.setSens(false);
 			if(v.etat.getSegment().getLongueur()+this.getLongueur()>distanceRestante) { //Si on reste bien sur le meme segment
 				v.etat.setPositionSegement(v.etat.getSegment().getLongueur()+this.getLongueur()-distanceRestante);				
 			}

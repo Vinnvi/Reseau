@@ -2,13 +2,13 @@
 public class Barriere extends Jonction{
 	SegmentRoute s;
 	
-	public Barriere(){
-		
+	public Barriere(int id){
+		this.setId(id);
 	}
 	
 	@Override
 	public void avancer(Voiture v,int distanceRestante) {
-		System.out.println("La voiture "+v.getId()+" est bloqué à une barriere");
+		System.out.println("La voiture "+v.getId()+" est bloque a� une barriere");
 	}
 
 	@Override

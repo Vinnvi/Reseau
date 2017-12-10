@@ -3,12 +3,13 @@ public abstract class JonctionSimple extends Jonction{
 	private SegmentRoute sFalse;
 	private SegmentRoute sTrue;
 	
+	@Override
 	public void addSegment(SegmentRoute s,boolean sens) {
 		if(sens == false) {
-			sFalse = s;
+			setsFalse(s);
 		}
 		else {
-			sTrue = s;
+			setsTrue(s);
 		}
 	}
 
