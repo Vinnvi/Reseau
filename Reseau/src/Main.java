@@ -65,6 +65,8 @@ public class Main {
 		SegmentRoute R6 = new SegmentRoute(45,P2,C2,"R6");
 		SegmentRoute R7 = new SegmentRoute(35,C1,P2,"R7");
 		
+		CapteurVitesse c1 = new CapteurVitesse(true,R1,42);
+		
 		Voiture v1 = new Voiture(0,40,new EtatCourant(R1,10, true,20));
 		ArrayList<Voiture> listVoitures = new ArrayList<Voiture>();
 		listVoitures.add(v1);

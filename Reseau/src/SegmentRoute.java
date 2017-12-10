@@ -1,10 +1,11 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Observer;
 
 import javax.swing.text.StyleContext.SmallAttributeSet;
 
-public class SegmentRoute <S extends Semaphore,J extends Jonction> implements Observable{
+public class SegmentRoute <S extends Semaphore,J extends Jonction,C extends Capteur> implements Observable{
 	String name;
 	private int longueur;
 	private S semaphoreFalse;
@@ -38,10 +39,10 @@ public class SegmentRoute <S extends Semaphore,J extends Jonction> implements Ob
 		capteurs.remove(o);
 	}
 	
-	public void notifierObservateurs(Voiture v){
+	public void notifierObservateurs(Voiture v,int positionDepart,int positionArrivee){
 		for(int i=0;i<capteurs.size();i++){
 			Observateur o = capteurs.get(i);
-			o.update(v);
+			o.update(v,positionDepart,positionArrivee);
 		}
 	}
 
@@ -92,7 +93,6 @@ public class SegmentRoute <S extends Semaphore,J extends Jonction> implements Ob
 	public void setJonctionFalse(J jonctionFalse) {
 		this.jonctionFalse = jonctionFalse;
 	}
-	
 	
 	
 }

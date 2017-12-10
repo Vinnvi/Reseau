@@ -8,7 +8,6 @@ public class PassagePieton extends JonctionSimple{
 	@Override
 	public void avancer(Voiture v,int distanceRestante){
 		if(v.etat.getSegment() == this.getsFalse()){
-			System.out.println("hello");
 			v.etat.setSegment(this.getsTrue());
 			v.etat.setPositionSegement(distanceRestante-this.getLongueur());
 		}
