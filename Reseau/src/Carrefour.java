@@ -15,11 +15,12 @@ public class Carrefour extends Jonction{
 	
 	@Override
 	public void avancer(Voiture v,int distanceRestante){
-		int nextStep = 0;
-		do{
-			nextStep = (int) (Math.random() * ( listeRoutes.size()-1 ));
-		}while(listeRoutes.get(nextStep)==v.etat.getSegment());
 		
+		int nextStep = -1;
+		do{
+			nextStep = (int) (Math.random() * ( listeRoutes.size()));
+		}while(listeRoutes.get(nextStep)==v.etat.getSegment());
+		System.out.println(nextStep);
 		v.etat.setSegment(listeRoutes.get(nextStep));
 		if(v.etat.getSegment().getJonctionFalse()==this){ // si on arrive depuis la gauche
 			if(v.etat.getSegment().getLongueur()+this.getLongueur()>distanceRestante) { //Si on reste bien sur le meme segment à la fin
